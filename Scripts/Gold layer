@@ -31,15 +31,15 @@ SELECT
     la.cntry                           AS country,
     ci.cst_marital_status              AS marital_status,
     CASE 
-        WHEN ci.cst_gndr != 'n/a' THEN ci.cst_gndr -- CRM is the primary source for gender
+        WHEN ci.cst_GNDR != 'n/a' THEN ci.cst_GNDR -- CRM is the primary source for gender
         ELSE COALESCE(ca.gen, 'n/a')  			   -- Fallback to ERP data
     END                                AS gender,
     ca.bdate                           AS birthdate,
     ci.cst_create_date                 AS create_date
-FROM silver.crm_cust_info ci
+FROM silver.crm_customer_info ci
 LEFT JOIN silver.erp_cust_az12 ca
     ON ci.cst_key = ca.cid
-LEFT JOIN silver.erp_loc_a101 la
+LEFT JOIN silver.erp_loca101 la
     ON ci.cst_key = la.cid;
 GO
 
@@ -93,3 +93,55 @@ LEFT JOIN gold.dim_products pr
 LEFT JOIN gold.dim_customers cu
     ON sd.sls_cust_id = cu.customer_id;
 GO
+
+
+---This drops all tables 
+DROP TABLE gold_fact_sales_table;
+DROP TABLE gold_dim_customers_table;
+DROP TABLE gold_dim_products_table;
+
+
+---This retrieves the content in the view and forms it into a table
+SELECT *
+INTO gold_fact_sales_table
+FROM gold.fact_sales;
+
+SELECT *
+INTO gold_dim_customers_table
+FROM gold.dim_customers;
+
+SELECT *
+INTO gold_dim_products_table
+FROM gold.dim_products;
+
+
+
+---Inserting data from the views (turned table) into their respective tables in sql server
+/*This prepares us for some Exploratory Data Analytics as well as Analytics checks.
+BULK INSERT gold_dim_products_table
+FROM 'C:\Users\Hp User\Documents\Downloads\SQL-with Baraa\sql-data-analytics-project\datasets\csv-files\gold.dim_products.csv'
+WITH (
+	FIRSTROW = 2,
+	FIELDTERMINATOR = ',',
+	TABLOCK
+);
+GO
+
+BULK INSERT gold_dim_customers_table
+FROM 'C:\Users\Hp User\Documents\Downloads\SQL-with Baraa\sql-data-analytics-project\datasets\csv-files\gold.dim_customers.csv'
+WITH (
+	FIRSTROW = 2,
+	FIELDTERMINATOR = ',',
+	TABLOCK
+);
+GO
+
+BULK INSERT gold_fact_sales_table
+FROM 'C:\Users\Hp User\Documents\Downloads\SQL-with Baraa\sql-data-analytics-project\datasets\csv-files\gold.fact_sales.csv'
+WITH (
+	FIRSTROW = 2,
+	FIELDTERMINATOR = ',',
+	TABLOCK
+);
+GO
+
