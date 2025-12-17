@@ -1,41 +1,61 @@
-# SQL_Data-Warehouse_Project
-Welcome to my **SQL Data Warehouse & Analytics Project**!  
-This repository showcases how a modern data warehouse solution is designed,built and analyzed a using **SQL Server**. It’s designed as a portfolio project to demonstrate **data engineering best practices, ETL pipelines, and business-ready analytics**.  
+# The Application of SQL Server in Data Warehousing Using the Medallion Architecture  
+
+
+## 📖 Introduction  
+
+This project demonstrates the application of **Microsoft SQL Server** in designing and implementing a modern **data warehouse** solution. It adopts the **Medallion Architecture (i,e, Bronze–Silver–Gold)** as a structured approach to data integration, transformation, and analytics. The work highlights how fragmented operational data from multiple source systems can be consolidated into a unified warehouse to support business intelligence and decision‑making.  
 
 ---
 
-## 🏗️ Data Architecture  
+## 📊 Project Overview  
 
-The project follows the **Medallion Architecture** (Bronze, Silver, Gold):  
-
-- **Bronze Layer** → Raw data ingestion from 2 source systems (CSV files).  
-- **Silver Layer** → Cleansing, standardization, and transformation for analysis.  
-- **Gold Layer** → Business-ready star schema optimized for reporting and dashboards.  
-
----
-
-## 📖 Project Overview  
-
-This project includes:  
-
-- **Data Architecture** → Designing a scalable warehouse using layered architecture.  
-- **ETL Pipelines** → Extract, transform, and load data from ERP & CRM sources.  
-- **Data Modeling** → Creating fact & dimension tables for analytical queries.  
-- **Analytics & Reporting** → SQL-based insights into customer behavior, product performance, and sales trends.  
+- **Source Systems**: ERP and CRM datasets provided in CSV format  
+- **Business Context**: Operational data was siloed across systems, limiting visibility into customer behavior, product performance, and sales trends  
+- **Objectives**:  
+  - Ingest raw data from ERP and CRM sources  
+  - Cleanse and standardize data to ensure consistency  
+  - Design a star schema optimized for analytical queries  
+  - Deliver SQL‑based insights and KPIs for stakeholders  
 
 ---
 
-## 🎯 Skills Demonstrated  
+## 🏗️ Methodology & Architecture  
 
-This repository highlights expertise in:  
+The solution follows the **Medallion Architecture**:  
 
-- SQL Development  
-- Data Engineering & ETL Pipelines  
-- Data Modeling (Star Schema)  
-- Analytics & Reporting  
-- Data Architecture Design  
+- **Bronze Layer** → Raw ingestion of ERP & CRM CSV files  
+- **Silver Layer** → Cleansing, standardization, and transformation processes  
+- **Gold Layer** → Business‑ready star schema supporting dashboards and reporting  
+
+Key steps undertaken:  
+- Development of ETL pipelines in SQL Server  
+- Creation of fact and dimension tables for analytical modeling  
+- Implementation of data quality checks and validation scripts  
+- Documentation of architecture, data catalog, and naming conventions  
 
 ---
+
+## 🎯 Outcomes  
+
+- Consolidated ERP and CRM data into a unified analytical model  
+- Improved reporting accuracy and query performance through star schema design  
+- Delivered actionable insights into customer retention, product sales, and revenue trends  
+- Established scalable architecture capable of integrating additional source systems  
+
+---
+
+## 🛠️ Skills & Tools Utilized  
+
+- **SQL Server Express** → Database engine  
+- **SQL Server Management Studio (SSMS)** → Development and administration  
+- **ETL Development** → SQL‑based pipelines for ingestion and transformation  
+- **Data Modeling** → Fact and dimension tables, star schema design  
+- **DrawIO** → Architecture and schema diagrams  
+- **GitHub** → Version control and collaboration  
+- **Documentation Tools** → Notion / Markdown for project documentation  
+
+---
+
 
 ## 📂 Repository Structure  
 
@@ -63,57 +83,21 @@ my-data-warehouse-project/
 
 ---
 
-## 🚀 Project Requirements  
 
-**Objective** → Build a modern data warehouse to consolidate sales data for analytics.  
-
-**Specifications**:  
-- Import data from ERP & CRM (CSV files).  
-- Cleanse and resolve data quality issues.  
-- Integrate sources into a unified analytical model.  
-- Provide clear documentation for stakeholders.  
-- Deliver SQL-based insights for decision-making.  
-
----
-
-## 📊 Analytics & Reporting  
-
-The project delivers insights into:  
-- Customer Behavior  
-- Product Performance  
-- Sales Trends  
-
-These reports empower stakeholders with **KPIs and actionable metrics**.  
-
----
-
-## 🛠️ Tools & Technologies  
-
-- **SQL Server Express** → Database engine  
-- **SQL Server Management Studio (SSMS)** → Database management  
-- **DrawIO** → Architecture & schema diagrams  
-- **GitHub** → Version control & collaboration  
-- **Notion / Docs** → Project documentation  
-
----
-
-## 🛡️ License  
-
-This project is licensed under the **MIT License**.  
-You are free to use, modify, and share with proper attribution.  
-
----
 
 ## 🌟 About Me  
 
-Hi, my name is Monjok Joseph Terem. I am a Nigerian Graduate Civil Engineer from the Federal University of Technology,Minna,as well as a Data Analyst. I am passionate about both fields and for the purpose of data, passionate about building scalable data solutions and turning raw data into insights.  
+Hi,my name is **Monjok Joseph Terem**. I am a Graduate Civil Engineer from the Federal University of Technology, Minna,Nigeria,with a strong passion for Civil Engineering ,data engineering & analytics, Sustainability, and business intelligence. My career interests lie at the intersection of the stated fields ,where I aim to leverage data‑driven solutions to improve infrastructure planning, optimize resource utilization, and support sustainable development. With a solid foundation as an Engineer,as well as in SQL development, ETL pipelines, and data modeling, I focus on building scalable systems that transform raw data into actionable insights for both engineering and business contexts.
 
-📫 Let’s connect:  
-Linkedin: https://www.linkedin.com/in/joseph-monjok-a8b813232
+📫 Connect with me:  
+- [LinkedIn](https://www.linkedin.com/in/joseph-monjok-a8b813232)  
 
+---
 
+✨ *This project illustrates the practical application of SQL Server in data warehousing using Medallion Architecture, showcasing both technical execution and business impact.*  
 
-✨ *This project is part of my learning journey in data engineering and analytics. Feel free to fork, star ⭐, or contribute!*  
+---
+
 
 
 
